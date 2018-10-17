@@ -98,7 +98,7 @@ void netcdf_handle(const string &fname, const string &vname,size_t &I_RECS ,size
 //	static ptrdiff_t stride[] = NULL;
 	nc_check( nc_get_vars_short ( ncid, var_varid, start_1, count_1, NULL, &var_data[0][0][0][0] ) );
 
-	short ****p = *var;
+/*	short ****p = *var;
 	for (int i = 0; i < 3; i++ )
 		for (int j = 0; j < I_LVLS; j++)
 			for (int k = 0; k < I_LATS; k++)
@@ -106,7 +106,7 @@ void netcdf_handle(const string &fname, const string &vname,size_t &I_RECS ,size
 				{
 					p[i][j][k][l] = var_data[i][j][k][l] ;
 				};
-
+*/
 	//size_t unit_latlen, unit_lonlen, unit_lvllen, unit_reclen, unit_varlen, 
 	size_t add_offset_len, scale_factor_len  ;
 	
@@ -153,7 +153,7 @@ void netcdf_handle(const string &fname, const string &vname,size_t &I_RECS ,size
 	
 	cout<<"variable reading completed "<<endl;
 	
-/*	float ****p = *var;
+	float ****p = *var;
 	for (int i = 0; i < 10; i++ )
 		for (int j = 0; j < I_LVLS; j++)
 			for (int k = 0; k < I_LATS; k++)
@@ -161,7 +161,7 @@ void netcdf_handle(const string &fname, const string &vname,size_t &I_RECS ,size
 				{
 					p[i][j][k][l] = ( (var_data[i][j][k][l]) * ( *var_scale_factor ) ) + ( *var_add_offset );
 				};
-*/
+
 	cout<<"now our variable got their values "<< endl;
 	
 	cout<<"var_data[2][2][2][2]   "<< var_data[2][2][2][2] <<endl;
