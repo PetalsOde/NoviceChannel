@@ -26,16 +26,12 @@ int main()
 	
 	cout<<triangle1.getTriangleperimeter()<<endl;	
 	cout<<triangle2.getTriangleperimeter()<<endl;
-	cout<<triangle1.getTrianglearea()<< "= qwer"<<endl;
-	float qwer;
-	qwer = triangle1.getTrianglearea();
-	cout<<"qwer = "<< qwer<<endl;
+	cout<<triangle1.getTrianglearea()<<endl;
 	
 	Rectangle rect1;
 	rect1.setBase(12);
 	rect1.setHeight(12);
 	
 	cout<<rect1.getRectanglearea()<<endl;
-//	cout<<rect1.getRectangleperimeter()<<endl;
 	return 0;
 }
