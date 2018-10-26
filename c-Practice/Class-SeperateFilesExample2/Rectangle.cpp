@@ -15,5 +15,5 @@ int Rectangle::getArea()
 }
 int Rectangle::getAreaRect(int base_, int height_)
 {
-	return base_ * height ;
+	return base * height ;
 }
