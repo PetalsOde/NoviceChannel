@@ -61,12 +61,12 @@ int main ()
 	short ****rhum = NULL;
 	short **dem = NULL;
   	
-	Create4D_Array(&air, 5, 5, 5, 5 );
-	Create4D_Array(&omeg, 5, 5, 5, 5 );	
-	Create4D_Array(&uwnd, 5, 5, 5, 5 );	
-	Create4D_Array(&vwnd, 5, 5, 5, 5 );	
-	Create4D_Array(&rhum, 5, 5, 5, 5 );
-	Create2D_Array(&dem, 5, 5) ;
+	Create4D_Array(&air, I_RECS, I_LVLS, I_LATS, I_LONS);
+	Create4D_Array(&omeg, I_RECS, I_LVLS, I_LATS, I_LONS);	
+	Create4D_Array(&uwnd, I_RECS, I_LVLS, I_LATS, I_LONS);	
+	Create4D_Array(&vwnd, I_RECS, I_LVLS, I_LATS, I_LONS);	
+	Create4D_Array(&rhum, I_RECS, I_LVLS, I_LATS, I_LONS);
+	Create2D_Array(&dem, I_LATS, I_LONS) ;
 
 	Data_handle_read datafile;
 	datafile.data_4D_read( I_RECS, I_LVLS, I_LATS, I_LONS, zpos, ypos, xpos, tpos, &air);
