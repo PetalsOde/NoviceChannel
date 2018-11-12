@@ -3,6 +3,7 @@
 #include<cmath>
 
 #include "data_interface.h"
+#include "printdata.h"
 
 using namespace std;
 
@@ -59,7 +60,8 @@ int main ()
 	short ****vwnd = NULL;
 	short ****rhum = NULL;
 	short **dem = NULL;
-  Create4D_Array(&air, 5, 5, 5, 5 );
+  	
+	Create4D_Array(&air, 5, 5, 5, 5 );
 	Create4D_Array(&omeg, 5, 5, 5, 5 );	
 	Create4D_Array(&uwnd, 5, 5, 5, 5 );	
 	Create4D_Array(&vwnd, 5, 5, 5, 5 );	
@@ -75,7 +77,16 @@ int main ()
 		
 	datafile.data_2D_read(I_LATS, I_LONS, ypos, xpos, &dem);
   
-  std::cout<<"working  irecs = " << I_RECS << "  I_LVLS = "<< I_LVLS<<"  I_LATS = "<< I_LATS <<"  I_LONS = " << I_LONS <<'\n' ;
+  	std::cout<<"working  irecs = " << I_RECS << "  I_LVLS = "<< I_LVLS<<"  I_LATS = "<< I_LATS <<"  I_LONS = " << I_LONS <<'\n' ;
+	
+	Data_Print dp;
+	dp.print_4D_data(I_RECS, I_LVLS, I_LATS, I_LONS, zpos, ypos, xpos, tpos, &air );
+	dp.print_4D_data(I_RECS, I_LVLS, I_LATS, I_LONS, zpos, ypos, xpos, tpos, &omeg );
+	dp.print_4D_data(I_RECS, I_LVLS, I_LATS, I_LONS, zpos, ypos, xpos, tpos, &uwnd );
+	dp.print_4D_data(I_RECS, I_LVLS, I_LATS, I_LONS, zpos, ypos, xpos, tpos, &vwnd );
+	dp.print_4D_data(I_RECS, I_LVLS, I_LATS, I_LONS, zpos, ypos, xpos, tpos, &rhum );
+	
+	dp.print_2D_data(I_LATS, I_LONS, ypos, xpos, &dem) ;
 	
 	return 0;
 		
