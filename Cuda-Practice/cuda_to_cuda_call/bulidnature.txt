@@ -1,0 +1,3 @@
+nvcc -arch=sm_20 -c main.cu
+nvcc -arch=sm_20 -c test.cu
+nvcc -arch=sm_20 -o test main.o test.o
