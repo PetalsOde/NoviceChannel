@@ -1,0 +1,3 @@
+g++ -c main.cpp
+nvcc -arch=sm_20 -c test.cu
+g++  -o test main.o test.o -L/usr/local/cuda/lib64 -lcudart
