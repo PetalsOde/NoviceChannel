@@ -1,3 +1,14 @@
+/****************************************************************/
+/** data_mem.cpp                     
+*
+*
+* Created on : 29 November 2018
+*
+*
+* 
+* Author : Newbie-Coder-1105
+****************************************************************/
+
 #include "data_mem.h"
 
 void Data_mem::data_storey(int &w, int &x, int &y, int &z, short *****var)
